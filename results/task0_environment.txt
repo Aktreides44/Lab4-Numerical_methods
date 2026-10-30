@@ -1,0 +1,7 @@
+Python     : 3.14.4
+NumPy      : 2.5.1
+Matplotlib : 3.11.2
+OS         : Windows-11-10.0.26200-SP0
+radix      : 2
+mant_dig   : 53
+binary64 confirmed

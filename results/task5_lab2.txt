@@ -1,0 +1,11 @@
+Source: Lab 2 report, Table 1 (Python), entered manually
+n_stop              = 94906266
+s                   = 1.644934057834575   (hex 0x1.a51a65fe79dfep+0)
+gap above s         = 2.2204460492503131e-16   (= 2^-52: True)
+term 1/n_stop^2     = 1.1102230158340705e-16
+term / gap          = 0.49999999604084683
+candidate == s      : True
+previous term / gap = 0.50000000657755894   (index 94906265)
+k_est = sqrt(2/gap) = 94906265.624251559   (= 2^26.5)
+tail bounds         : 1.053671208600705e-08 < R < 1.0536712197029352e-08
+tail / lost term    = 94906265.999999985

@@ -1,0 +1,7 @@
+last_changed           = 2.2204460492503131e-16  = 2^-52
+first_unchanged        = 1.1102230246251565e-16  = 2^-53
+nextafter(1, inf) - 1  = 2.2204460492503131e-16
+sys.float_info.epsilon = 2.2204460492503131e-16
+all three equal        : True
+unit roundoff u        = 1.1102230246251565e-16
+1 + 2^-53 == 1         : True

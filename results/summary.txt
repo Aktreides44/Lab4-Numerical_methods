@@ -1,0 +1,60 @@
+===== ENVIRONMENT =====
+Python     : 3.14.4
+NumPy      : 2.5.1
+Matplotlib : 3.11.2
+OS         : Windows-11-10.0.26200-SP0
+radix      : 2
+mant_dig   : 53
+binary64 confirmed
+
+===== TASK 1 - EPSILON =====
+last_changed           = 2.2204460492503131e-16  = 2^-52
+first_unchanged        = 1.1102230246251565e-16  = 2^-53
+nextafter(1, inf) - 1  = 2.2204460492503131e-16
+sys.float_info.epsilon = 2.2204460492503131e-16
+all three equal        : True
+unit roundoff u        = 1.1102230246251565e-16
+1 + 2^-53 == 1         : True
+
+===== TASKS 2-3 - SPACING =====
+samples               : 100
+first x / last x      : 1e-300 / 1.0000000000000001e+300
+Delta+ min / max      : 1.657809211691619e-316 / 1.4870169084777831e+284
+min r                 : 1.1127410773485921e-16   q = 0.50113403013069635
+max r                 : 2.2154213401466309e-16   q = 0.99773707219530117
+u / eps_mach          : 1.1102230246251565e-16 / 2.2204460492503131e-16
+all u < r <= eps      : True
+
+===== TASK 4 - POWERS OF TWO =====
+   x                   Delta-                   Delta+  ratio  neg check              up-gap at -x
+   1   1.1102230246251565e-16   2.2204460492503131e-16      2       True    1.1102230246251565e-16
+   2   2.2204460492503131e-16   4.4408920985006262e-16      2       True    2.2204460492503131e-16
+   4   4.4408920985006262e-16   8.8817841970012523e-16      2       True    4.4408920985006262e-16
+   8   8.8817841970012523e-16   1.7763568394002505e-15      2       True    8.8817841970012523e-16
+local samples after removing duplicates: 202
+
+===== TASK 5 - LAB 2 CONNECTION =====
+Source: Lab 2 report, Table 1 (Python), entered manually
+n_stop              = 94906266
+s                   = 1.644934057834575   (hex 0x1.a51a65fe79dfep+0)
+gap above s         = 2.2204460492503131e-16   (= 2^-52: True)
+term 1/n_stop^2     = 1.1102230158340705e-16
+term / gap          = 0.49999999604084683
+candidate == s      : True
+previous term / gap = 0.50000000657755894   (index 94906265)
+k_est = sqrt(2/gap) = 94906265.624251559   (= 2^26.5)
+tail bounds         : 1.053671208600705e-08 < R < 1.0536712197029352e-08
+tail / lost term    = 94906265.999999985
+
+===== TASK 6 - ADDITION ORDER =====
+a + b            = 0
+b + c            = -10000000000000000   (b + c == b: True)
+(a + b) + c      = 1
+a + (b + c)      = 0
+exact result     = 1
+gap near b       = 2   (c == gap/2: True)
+b       = -10000000000000000 = -5000000000000000 x 2
+b + gap = -9999999999999998 = -4999999999999999 x 2
+order [1e+16, 1.0, -1e+16]: loop = 0   fsum = 1
+order [1e+16, -1e+16, 1.0]: loop = 1   fsum = 1
+
